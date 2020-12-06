@@ -16,18 +16,20 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
+
                 <?php foreach($result as $data): ?>
+                    
+                    <div class="alert alert-<?php echo $data['color'] ?> text-uppercase" role="alert">
+                        
+                        <?php echo $data['id'] ?>
+                        -
+                        <?php echo $data['color'] ?>
+                        -
+                        <?php echo $data['descripcion'] ?>
 
-                <div class="alert alert-<?php echo $data['color'] ?> text-uppercase" role="alert">
-                    <?php echo $data['id'] ?>
-                    -
-                    <?php echo $data['color'] ?>
-                    -
-                    <?php echo $data['descripcion'] ?>
-
-                    <a href="delete.php?id=<?php echo $data['id'] ?>" class="float-right"><i class="fas fa-trash-alt ml-3"></i></a>
-                    <a href="index.php?id=<?php echo $data['id'] ?>" class="float-right"><i class="fas fa-pencil-alt"></i></a>
-                </div>
+                        <a href="delete.php?id=<?php echo $data['id'] ?>" class="float-right"><i class="fas fa-trash-alt ml-3"></i></a>
+                        <a href="index.php?id=<?php echo $data['id'] ?>" class="float-right"><i class="fas fa-pencil-alt"></i></a>
+                    </div>
 
                 <?php endforeach ?>
             </div>
